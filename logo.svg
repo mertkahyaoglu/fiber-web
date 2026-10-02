@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!--
+    Fiber's logo: an F drawn in light with the game's own pieces. A beam comes in from the source
+    cable at the bottom; a splitter halfway up sends half of it right (the middle bar) and a mirror
+    at the top turns the rest right (the top bar); each bar ends in a lit target. The loading screen
+    in index.html animates the same geometry: keep the two in step.
+  -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c1631"/>
+      <stop offset="1" stop-color="#03050d"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#45ecff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#45ecff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <clipPath id="clip">
+      <rect x="100" y="100" width="824" height="824" rx="184"/>
+    </clipPath>
+  </defs>
+
+  <!-- The tile: a chamber floor with its grid of dots. -->
+  <rect x="100" y="100" width="824" height="824" rx="184" fill="url(#tile)"/>
+  <g clip-path="url(#clip)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#halo)"/>
+    <g fill="#2a3d66" opacity="0.55">
+      <circle cx="252" cy="252" r="7"/><circle cx="432" cy="252" r="7"/><circle cx="612" cy="252" r="7"/><circle cx="792" cy="252" r="7"/>
+      <circle cx="252" cy="432" r="7"/><circle cx="432" cy="432" r="7"/><circle cx="612" cy="432" r="7"/><circle cx="792" cy="432" r="7"/>
+      <circle cx="252" cy="612" r="7"/><circle cx="432" cy="612" r="7"/><circle cx="612" cy="612" r="7"/><circle cx="792" cy="612" r="7"/>
+      <circle cx="252" cy="792" r="7"/><circle cx="432" cy="792" r="7"/><circle cx="612" cy="792" r="7"/><circle cx="792" cy="792" r="7"/>
+    </g>
+    <!-- The source cable, coming in through the bottom edge. -->
+    <rect x="344" y="770" width="56" height="170" rx="14" fill="#13203d"/>
+    <rect x="360" y="770" width="24" height="170" rx="8" fill="#2f5dff" opacity="0.7"/>
+  </g>
+  <rect x="100" y="100" width="824" height="824" rx="184" fill="none" stroke="#1d3358" stroke-width="8"/>
+
+  <!-- The light: a soft glow under a bright beam with a white-hot core. Past the splitter each half is dimmer. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M372 790 V270 H690 M372 490 H630" stroke="#45ecff" stroke-width="84" opacity="0.45" filter="url(#glow)"/>
+    <path d="M372 790 V490" stroke="#45ecff" stroke-width="40"/>
+    <path d="M372 490 V270 H690 M372 490 H630" stroke="#45ecff" stroke-width="40" opacity="0.82"/>
+    <path d="M372 790 V490" stroke="#eaffff" stroke-width="14"/>
+    <path d="M372 490 V270 H690 M372 490 H630" stroke="#eaffff" stroke-width="12" opacity="0.8"/>
+  </g>
+
+  <!-- The mirror at the top and the splitter halfway: both lean like "/". -->
+  <g stroke-linecap="round">
+    <path d="M318 324 L426 216" stroke="#03050d" stroke-width="34"/>
+    <path d="M318 324 L426 216" stroke="#d8ecff" stroke-width="18"/>
+    <path d="M318 544 L426 436" stroke="#03050d" stroke-width="34"/>
+    <path d="M318 544 L426 436" stroke="#c58bff" stroke-width="18"/>
+  </g>
+
+  <!-- The two targets, lit. -->
+  <g>
+    <circle cx="690" cy="270" r="58" fill="#45ecff" opacity="0.35" filter="url(#glow)"/>
+    <circle cx="690" cy="270" r="36" fill="#0d1428" stroke="#45ecff" stroke-width="12"/>
+    <circle cx="690" cy="270" r="14" fill="#eaffff"/>
+    <circle cx="630" cy="490" r="50" fill="#45ecff" opacity="0.3" filter="url(#glow)"/>
+    <circle cx="630" cy="490" r="30" fill="#0d1428" stroke="#45ecff" stroke-width="10" opacity="0.9"/>
+    <circle cx="630" cy="490" r="11" fill="#eaffff" opacity="0.9"/>
+  </g>
+</svg>

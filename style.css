@@ -1,0 +1,99 @@
+/* Fiber's support and privacy pages: the game's dark chamber and cyan light, no web fonts or trackers. */
+:root {
+  color-scheme: dark;
+  --bg: #03050c;
+  --panel: #0b1328;
+  --line: rgba(69, 236, 255, 0.22);
+  --text: #dbe9ff;
+  --muted: #8fa6c8;
+  --accent: #45ecff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 50% 0%, #0d1a3a 0%, var(--bg) 60%) fixed, var(--bg);
+  color: var(--text);
+  font: 16px/1.65 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+header img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+}
+
+header .name {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #eaffff;
+  text-shadow: 0 0 18px rgba(69, 236, 255, 0.5);
+}
+
+header .tag {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 26px;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  margin: 32px 0 8px;
+  color: #eaffff;
+}
+
+p,
+li {
+  color: var(--text);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+}
+
+section.card {
+  margin-top: 16px;
+  padding: 4px 20px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(11, 19, 40, 0.7);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
